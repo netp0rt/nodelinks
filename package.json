@@ -1,0 +1,15 @@
+{
+  "name": "nodelinks-cli",
+  "version": "1.0.0",
+  "description": "A simple nodeModules mklink tool",
+  "bin": {
+    "nodelinks": "./nodelinks.js"
+  },
+  "preferGlobal": true,
+  "keywords": [
+    "cli",
+    "nodelinks"
+  ],
+  "author": "netport",
+  "license": "MIT"
+}
