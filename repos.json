@@ -1,0 +1,39 @@
+[
+  {
+    "name": "淘宝npm镜像",
+    "value": "registry.npmmirror.com",
+    "alias": [
+      "npmmirror",
+      "taobao"
+    ]
+  },
+  {
+    "name": "npm官方源",
+    "value": "registry.npmjs.org",
+    "alias": [
+      "npmjs",
+      "official"
+    ]
+  },
+  {
+    "name": "腾讯npm镜像",
+    "value": "mirrors.cloud.tencent.com/npm/",
+    "alias": [
+      "tencent"
+    ]
+  },
+  {
+    "name": "华为云镜像",
+    "value": "mirrors.huaweicloud.com/repository/npm/",
+    "alias": [
+      "huawei"
+    ]
+  },
+  {
+    "name": "自定义地址",
+    "value": "",
+    "alias": [
+      "custom"
+    ]
+  }
+]

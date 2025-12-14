@@ -10,8 +10,8 @@ if %ERRORLEVEL% EQU 0 (
 echo 请求管理员权限...
 set current_dir=%cd%
 
-:: 使用 PowerShell 启动管理员权限的 cmd
-powershell -Command "Start-Process cmd -ArgumentList '/k cd /d \"%current_dir%\" && npm install -g . && cd .. && nodelinks welcome && echo. && echo 安装完成！使用命令 \"nodelinks help\" 获取更多信息 && pause && exit /b 1' -Verb RunAs"
+:: 在管理员进程中完成所有操作，包括用户指引
+powershell -Command "Start-Process cmd -ArgumentList '/k chcp 65001 >nul && echo 正在安装 nodelinks... && cd /d \"%current_dir%\" && npm install -g . && echo ✅ 安装完成！ && echo. && echo 运行欢迎界面... && nodelinks welcome && echo. && echo 使用命令 \"nodelinks help\" 获取更多信息。 && pause' -Verb RunAs"
 
 exit /b
 
@@ -28,7 +28,6 @@ if %ERRORLEVEL% NEQ 0 (
 
 echo ✅ 安装完成！
 echo.
-::新增cd ..
 cd ..
 echo 运行欢迎界面...
 nodelinks welcome

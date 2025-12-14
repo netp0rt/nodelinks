@@ -1,9 +1,9 @@
 {
-  "name": "nodelinks-cli",
-  "version": "1.0.0",
+  "name": "nodelinks",
+  "version": "1.0.1",
   "description": "A simple nodeModules mklink tool",
   "bin": {
-    "nodelinks": "./nodelinks.js"
+    "nodelinks": "./nodelink.js"
   },
   "preferGlobal": true,
   "keywords": [
