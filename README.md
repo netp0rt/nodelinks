@@ -1,48 +1,44 @@
 # 🛠 nodelinks - 共享 node_modules 管理工具
 
-🎯 nodelinks CLI 工具 — 统一管理 node_modules
+一个轻量级 CLI 工具，用于统一管理多个项目的 `node_modules`，支持软链、批量安装、快速重置。
 
-📌 用法:
-  nodelinks [command]
+## 🎯 功能亮点
 
-📚 命令列表:
+- ✅ 全局统一安装 npm 包
+- ✅ 在当前项目创建 `node_modules` junction 链接
+- ✅ 支持快捷命令：`-i`, `-rm`, `-l`
+- ✅ 一键重置项目目录
+- ✅ 中文友好提示
 
-  📦 包管理命令（统一安装位置）
-    nodelinks install <pkg...>     # 安装模块
-    nodelinks remove <pkg...>       # 卸载模块  
-    nodelinks reinstall <pkg...>   # 重装模块
-    nodelinks list                 # 查看已安装模块
+## 📦 安装
 
-  ⚙️  配置管理
-    nodelinks show                 # 查看当前配置
-    nodelinks removeSettings       # 删除 settings.json
-    nodelinks reinit [path]        # 重新初始化/设置新路径
+```bash
+cd F:\codes\nodeLink
+npm install -g .
+```
+或`双击运行 install.bat（自动提权安装）`
 
-  🖇️  符号链接管理
-    nodelinks create               # 在当前目录下链接init的 node_modules 地址
-    nodelinks del                  # 删除当前 node_modules 链接
+🧰 常用命令
+# 显示帮助
+nodelinks help
 
-  🔧 系统命令
-    nodelinks help                 # 显示帮助
-    nodelinks version              # 显示版本
-    nodelinks welcome              # 显示欢迎信息
-    nodelinks reset                # 重置项目目录（仅保留核心文件）
+# 安装模块
+nodelinks -i express lodash
 
-  ⌨️  快捷方式
-    nodelinks -i <pkg...>    = install 多个包
-    nodelinks -rm <pkg...>   = remove 多个包
-    nodelinks -ri <pkg...>   = reinstall 多个包
-    nodelinks -l             = list
-    nodelinks -rms          = removeSettings
-    nodelinks -v             = version
-    nodelinks -h             = help
+# 卸载模块
+nodelinks -rm lodash
 
-💡 示例:
-  nodelinks install express uuid lodash
-  nodelinks -i express uuid lodash
-  nodelinks remove uuid lodash
-  nodelinks -rm uuid lodash
-  nodelinks create
-  nodelinks del
-  nodelinks reset
-`
+# 查看已安装
+nodelinks -l
+
+# 创建软链（在任意项目中）
+nodelinks create
+
+# 删除软链
+nodelinks del
+
+💬 卸载
+双击运行 uninstall.bat，或手动执行：
+```bash
+npm uninstall -g nodelinks
+```
