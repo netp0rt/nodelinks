@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const fs = require('fs/promises');  // Promise API
-const fss = require('fs');  // 同步 API
+const fs = require('fs/promises');
+const fss = require('fs');
 const path = require('path');
 const { spawn, spawnSync } = require('child_process');
 const https = require('https');
@@ -124,8 +124,12 @@ async function containsNodelinksInstall(p) {
   
   try {
     const files = await fs.readdir(normalized, { withFileTypes: true });
-    const symlinks = files.filter(file => file.isSymbolicLink());
-    return symlinks.length > 0;
+    const nodelinksSymlinks = files.filter(file => 
+      file.isSymbolicLink() && file.name === 'nodelinks'
+    );
+    
+    console.log('找到的 nodelinks 符号链接:', nodelinksSymlinks.map(f => f.name));
+    return nodelinksSymlinks.length > 0;
   } catch (error) {
     console.error(`检查目录失败 ${p}:`, error.message);
     return false;
